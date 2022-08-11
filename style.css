@@ -1,0 +1,107 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+.conteudo-principal {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Faz com que ocupe 100% da tela  */
+}
+.form-cria-nova-dica {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background-color: #1e195b;
+  padding: 30px 32px 30px 32px;
+}
+.input-padrao {
+  margin: 3px 0 15px 0;
+  padding: 7px;
+  border: 3px solid #d9d9d9;
+  border-radius: 5px;
+}
+.conteudo-dicas {
+  background-color: #f1f1f1;
+  flex-grow: 6;
+}
+.cards-indicativos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #791919;
+}
+.card {
+  text-align: center;
+  background-color: #d9d9d9;
+  width: 150px;
+  height: 100px;
+  margin: 30px 0 30px 0;
+}
+.card h3 {
+  margin: 10px 0 5px 0;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.card span {
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.campo-pesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  background-color: green;
+}
+.barra-pesquisa {
+  box-sizing: border-box;
+  width: 658px;
+  height: 36px;
+  padding: 7px;
+  border: 3px solid #d9d9d9;
+  border-radius: 30px;
+}
+.botoes-nav-bar {
+  font-size: 20px;
+  width: 47px;
+  height: 36px;
+  margin-left: 15px;
+  border: 3px solid #d9d9d9;
+  border-radius: 30px;
+}
+.dados-pesquisados {
+  margin: 0;
+  padding: 0 40px;
+  overflow: auto;
+  height: calc(100vh - 214px);
+}
+.box-dados{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0 20px;
+  margin: 10px 0;
+}
+.box-dados h2{
+  text-align: center;
+}
+.box-dados h4 {
+  margin: 0 5px 0 0;
+}
+.box-dados-ling , .box-dados-cat{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.box-dados-ling p , .box-dados-cat p {
+  margin: 0;
+}

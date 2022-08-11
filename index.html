@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>DEVinKnowledge | Base do Conhecimento</title>
+  </head>
+  
+  <body onload="carregaDicasSalvas()">
+    <main class="conteudo-principal">
+      <form class="form-cria-nova-dica">
+        <label for="titulo-dica">Título</label>
+        <input
+          type="text"
+          id="titulo-dica"
+          class="input-padrao"
+          minlength="8"
+          maxlength="64"
+          required
+          placeholder="Digite um título"
+        />
+
+        <label for="linguagem-skill">Linguagem/Skill</label>
+        <input
+          type="text"
+          id="linguagem-skill"
+          class="input-padrao"
+          minlength="4"
+          maxlength="16"
+          required
+          placeholder="Digite uma linguagem ou skill"
+        />
+
+        <label for="categoria">Categoria</label>
+        <input
+          list="categoria-lista"
+          id="categoria"
+          class="input-padrao"
+          required
+          placeholder="Selecione uma categoria"
+        />
+        <datalist id="categoria-lista">
+          <option value="FrontEnd"></option>
+          <option value="BackEnd"></option>
+          <option value="FullStack"></option>
+          <option value="Comportamental/Soft"></option>
+        </datalist>
+
+        <label for="descricao-dica">Descrição</label>
+        <textarea
+          id="descricao-dica"
+          class="input-padrao"
+          cols="40"
+          rows="10"
+          minlength="32"
+          maxlength="512"
+          required
+          placeholder="Escreva aqui o detalhamento da sua dica.."
+        ></textarea>
+
+        <label for="urlyoutube">Video do YouTube</label>
+        <input
+          type="text"
+          id="urlyoutube"
+          class="input-padrao"
+          placeholder="https://suaurl.com"
+        />
+          <div class="botoes-cria-dica">
+          <button id="btn-limpar" type="reset">Limpar</button>
+          <button id="btn-salvar" type="submit">Salvar</button>
+        </div>
+      </form>
+      <div class="conteudo-dicas">
+        <div class="cards-indicativos">
+          <div class="card">
+            <h3>Total</h3>
+            <span id="num-total">0</span>
+          </div>
+          <div class="card">
+            <h3>FrontEnd</h3>
+            <span id="num-frontend">0</span>
+          </div>
+          <div class="card">
+            <h3>BackEnd</h3>
+            <span id="num-backend">0</span>
+          </div>
+          <div class="card">
+            <h3>FullStack</h3>
+            <span id="num-fullstack">0</span>
+          </div>
+          <div class="card">
+            <h3>SoftSkill</h3>
+            <span id="num-softskill">0</span>
+          </div>
+        </div>
+        <nav class="campo-pesquisa">
+          <input type="text" class="barra-pesquisa" placeholder="Digite um título para buscar...">
+          <button class="botoes-nav-bar" id="btn-pesquisa">&#128270</button>
+          <button class="botoes-nav-bar" id="btn-apaga">X</button>
+        </nav>
+        <ul class="dados-pesquisados">
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
