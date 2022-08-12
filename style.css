@@ -35,14 +35,13 @@ select:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #791919;
 }
 .card {
   text-align: center;
   background-color: #d9d9d9;
   width: 150px;
   height: 100px;
-  margin: 30px 0 30px 0;
+  margin: 30px 0 15px 0;
 }
 .card h3 {
   margin: 10px 0 5px 0;
@@ -60,11 +59,10 @@ select:focus {
   align-items: center;
   justify-content: center;
   height: 54px;
-  background-color: green;
 }
-.barra-pesquisa {
+#barra-pesquisa {
   box-sizing: border-box;
-  width: 658px;
+  width: 60%;
   height: 36px;
   padding: 7px;
   border: 3px solid #d9d9d9;
