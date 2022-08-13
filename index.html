@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./favicon-16x16-base-do-conhecimento.ico" type="image/x-icon" />
     <title>DEVinKnowledge | Base do Conhecimento</title>
   </head>
-  
   <body onload="carregaDicasSalvas()">
     <main class="conteudo-principal">
       <form class="form-cria-nova-dica">
+        <h1 class="titulo-principal">
+          <img src="./Logo-base-do-conhecimento.png" width="80%" alt="Logo do site Base do Conhecimento">
+        </h1>
         <label for="titulo-dica">Título</label>
         <input
           type="text"
@@ -68,9 +71,9 @@
           class="input-padrao"
           placeholder="https://suaurl.com"
         />
-          <div class="botoes-cria-dica">
-          <button id="btn-limpar" type="reset">Limpar</button>
-          <button id="btn-salvar" type="submit">Salvar</button>
+          <div class="container-botoes-cria-dica">
+          <button class="botoes-cria-dica" id="btn-limpar" type="reset">Limpar</button>
+          <button class="botoes-cria-dica" id="btn-salvar" type="submit">Salvar</button>
         </div>
       </form>
       <div class="conteudo-dicas">

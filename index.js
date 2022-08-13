@@ -95,14 +95,10 @@ function salvaDadosInseridos() {
       alert("SUCESSO!\n\nDica cadastrada na base do conhecimento.");
     } else {
       // Caso o salvar seja clicado para editar uma dica existente, o usuario deverá informar se ele quer duplicar ou não a dica que está editando 
-      flagApagaDicaAnterior = window.confirm(
-        "SUCESSO!\n\nVocê acabou de editar uma dica, gostaria de manter uma cópia da dica anterior na Base do Conhecimento?\n\nAo clicar em 'Cancelar' você estará excluindo a dica anterior."
+      window.alert(
+        "SUCESSO!\n\nVocê acabou de editar uma dica."
       );
-      // Envio para o localStorage a resposta do usuário e caso ele queira excluir a dica anterior eu chamo a função que excluiDica da array 
-      localStorage.setItem("apagaDicaAnterior", flagApagaDicaAnterior);
-      if (flagApagaDicaAnterior == false) {
-        excluiDicaInformada();
-      }
+      excluiDicaInformada();
     }
   }
 }
@@ -200,7 +196,6 @@ function excluiDicaInformada() {
   } else {
     // Caso seja exclusão de dica que foi editada eu busco no localStorage o indice da dica em questão e limpo a flag 
     dicaExcluir = localStorage.getItem("dicaEditandoIndex");
-    flagEditaDica = 0;
   }
   // Confere qual indice foi informado e exclui da array, ajusta o conteúdo mostrado na tela e chama função callback
   arrayContemDicas.forEach(function (elemento) {
@@ -228,11 +223,16 @@ function excluiDicaInformada() {
       localStorage.setItem("numFullStack", contadorFullStack);
       localStorage.setItem("numSoftSkill", contadorSoftSkill);
 
+      if(flagEditaDica == 0){
       alert("SUCESSO!\n\nDica excluida da base do conhecimento.");
+      }else{
+      flagEditaDica = 0;
+      }
     }
     document.querySelector(".dados-pesquisados").innerHTML = "";
-    return carregaDicasSalvas();
+    
   });
+  carregaDicasSalvas()
 }
 
 // Função que edita a dica informada por meio do indice digitado pelo usuário, assim como a excluiDicaInformada
@@ -305,3 +305,6 @@ btnPesquisa.addEventListener("click", apagaPesquisa);
 function apagaPesquisa() {
   location.reload();
 }
+
+
+
