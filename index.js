@@ -1,3 +1,15 @@
+// Crio um array para receber os objetos(Dicas), os objetos da pesquisa, os contadores de categoria especifica e flags de navegação globais
+let arrayContemDicas = [],
+  arrayDadosPesquisados = [],
+  contadorFrontEnd = 0,
+  contadorBackEnd = 0,
+  contadorFullStack = 0,
+  contadorSoftSkill = 0,
+  flagPesquisaFalhou = 0,
+  flagEditaDica = 0,
+  flagApagaDicaAnterior,
+  indiceDicaEditando,
+  dicaExcluir;
 // Realizando atribuição dos inputs e botoes do form a variaveis
 let valorInputTitulo = document.querySelector("#titulo-dica");
 let valorInputLinguagem = document.querySelector("#linguagem-skill");
@@ -11,18 +23,6 @@ let numFrontend = document.querySelector("#num-frontend");
 let numBackend = document.querySelector("#num-backend");
 let numFullstack = document.querySelector("#num-fullstack");
 let numSoftskill = document.querySelector("#num-softskill");
-// Crio um array para receber os objetos(Dicas), os objetos da pesquisa, os contadores de categoria especifica e flags de navegação globais
-let arrayContemDicas = [],
-  arrayDadosPesquisados = [],
-  contadorFrontEnd = 0,
-  contadorBackEnd = 0,
-  contadorFullStack = 0,
-  contadorSoftSkill = 0,
-  flagPesquisaFalhou = 0,
-  flagEditaDica = 0,
-  flagApagaDicaAnterior,
-  indiceDicaEditando,
-  dicaExcluir;
 
 // Função que é chamada no onload, caso o localStorage já tenha algum valor salvo,  ela garante que vá carregas sem problemas, caso contrário ele deixa a array preparada
 function carregaDicasSalvas() {
@@ -48,6 +48,7 @@ function carregaDicasSalvas() {
     contadorSoftSkill = 0;
   }
 }
+
 // Cria um evento para o botão btnSalvarForm, ao ser clicado ele envia todos dados da dica para o localstorage e acrescente na arrayContemDicas
 btnSalvarForm.addEventListener("click", salvaDadosInseridos);
 function salvaDadosInseridos() {
@@ -102,6 +103,7 @@ function salvaDadosInseridos() {
     }
   }
 }
+
 // Função irá criar uma li para cada elemento do array de dicas e fará a inserção do texto no html para cada item criado
 function criaLiAddTexto(elemento) {
   // Deixo todos novos elementos criados e com seus atributos definidos
@@ -261,13 +263,13 @@ function editaDicaInformada() {
 btnPesquisa = document.querySelector("#btn-pesquisa");
 btnPesquisa.addEventListener("click", pesquisaPorTitulo);
 function pesquisaPorTitulo() {
-  // Faço link do id da barra de pesquisa ocm uma variavel e ajusto o valor digitado
+ // Faço link do id da barra de pesquisa com uma variavel e ajusto o valor digitado
   inputBarraPesquisa = document.querySelector("#barra-pesquisa").value;
   filtraValorInput = inputBarraPesquisa.toUpperCase();
   // Crio um loop em todos os itens da lista e escondo aqueles que não são compatíveis
   arrayContemDicas.forEach((elemento) => {
     let elementoAjustadoUpperCase = elemento.titulo.toUpperCase();
-    if (filtraValorInput == elementoAjustadoUpperCase) {
+    if (elementoAjustadoUpperCase.includes(filtraValorInput) == true) {
       arrayDadosPesquisados.push(elemento);
       localStorage.setItem(
         "dadosPesquisados",
@@ -305,6 +307,5 @@ btnPesquisa.addEventListener("click", apagaPesquisa);
 function apagaPesquisa() {
   location.reload();
 }
-
-
+ 
 

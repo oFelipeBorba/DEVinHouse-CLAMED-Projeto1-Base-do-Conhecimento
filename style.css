@@ -1,3 +1,4 @@
+/* Estilização responsiva a partir da linha 166 */
 body {
   padding: 0px;
   margin: 0px;
@@ -10,7 +11,6 @@ select:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
 }
-
 .titulo-principal {
   max-width: fit-content;
 }
@@ -78,12 +78,10 @@ select:focus {
   font-weight: 600;
   font-size: 24px;
 }
-
 .card span {
   font-weight: 400;
   font-size: 40px;
 }
-
 .campo-pesquisa {
   display: flex;
   align-items: center;
@@ -141,13 +139,19 @@ select:focus {
 .box-dados-cat p {
   margin: 0;
 }
-.botoes-box-dados{
+#dados-descricao {
+  width: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.botoes-box-dados {
   display: flex;
   flex-direction: row;
   gap: 5px;
-  justify-content: right;
+  justify-content: left;
 }
-.btn-cards{
+.btn-cards {
   width: 90px;
   height: 32px;
   color: #fff;
@@ -159,3 +163,58 @@ select:focus {
   text-align: center;
   background-color: #1e195b;
 }
+@media only screen and (max-device-width: 1160px) {
+  body {
+    overflow: auto;
+  }
+  .titulo-principal {
+    text-align: center;
+    max-width: 50%;
+  }
+  .conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .form-cria-nova-dica {
+    padding: 0 20px 10px 20px;
+    width: auto;
+  }
+  .input-padrao {
+    margin: 0 0 10px;
+    padding: 0;
+  }
+  .container-botoes-cria-dica {
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .conteudo-dicas {
+    width: 100%;
+  }
+  .cards-indicativos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+    height: 60px;
+    margin: 10px 0 10px 0;
+  }
+  .card h3 {
+    margin: 15px 10px 5px 0;
+  }
+  .card span {
+    margin: 15px 0 5px 0;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  #barra-pesquisa {
+    width: 60%;
+  }
+}
+ 
