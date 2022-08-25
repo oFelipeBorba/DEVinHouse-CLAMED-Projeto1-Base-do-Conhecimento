@@ -28,5 +28,8 @@
 - **pesquisaPorTitulo()** : Filtra e mostra na tela todas as dicas que contenham em seu título a palavra ou letras digitadas no campo de pesquisa; *(Linha: 265)*
 - **apagaPesquisa()** : Limpa o campo de pesquisa e o filtro da pesquisa realizada; *(Linha: 307)*
 
+## Visualização do projeto final:
+<img src="https://user-images.githubusercontent.com/108702072/186738985-4cdbd0d3-c2bc-48cb-b78e-b0bab1701984.png" width="700px" />
+
 
 > Desenvolvido por: Felipe de Oliveira Borba
